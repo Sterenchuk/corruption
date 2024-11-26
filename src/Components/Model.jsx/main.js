@@ -1,4 +1,8 @@
-class Validate {
+//this remove warning from console about useless react, but this component use React
+// eslint-disable-next-line
+import React, { Component } from 'react';
+
+class Validate extends Component{
   constructor(
     rang,
     salary,
@@ -7,6 +11,7 @@ class Validate {
     companyCoraptionLevel = 0,
     faith = 0
   ) {
+    super();
     this.rang = rang;
     this.salary = salary;
     this.bribeSize = bribeSize;
@@ -19,7 +24,7 @@ class Validate {
   validateData() {}
 }
 
-class Coraption extends Validate {
+export default class Coraption extends Validate {
   constructor(
     rang,
     salary,
@@ -166,4 +171,5 @@ class Coraption extends Validate {
 }
 
 // Create an instance
-const corp = new Coraption(2, 4000, 30000);
+//uncommit if needed
+//const corp = new Coraption(2, 4000, 30000);
