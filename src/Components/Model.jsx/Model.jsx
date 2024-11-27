@@ -6,19 +6,8 @@ class Model extends ModelController {
   constructor(props) {
     super(props);
 
-    this.handleInputOneToTen = this.handleInputOneToTen.bind(this);
     this.handleInputOneToBillion = this.handleInputOneToBillion.bind(this);
     this.handleRangeChange = this.handleRangeChange.bind(this);
-  }
-
-  handleInputOneToTen(event) {
-    const { name, value } = event.target;
-
-    const isValid = /^[0-9]*$/.test(value) && Number(value) >= 1 && Number(value) <= 10;
-
-    if (isValid || value === "") {
-      this.setState({ [name]: value === "" ? 1 : Number(value) });
-    }
   }
 
   handleInputOneToBillion(event) {
