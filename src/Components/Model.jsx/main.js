@@ -57,8 +57,8 @@ export default class Coraption extends Component {
     return args.reduce((acc, curr) => Math.max(acc, curr), 0);
   }
 
-  conjunction(a, b) {
-    return Math.min(a, b);
+  conjunction(...args) {
+    return args.reduce((acc, curr) => Math.min(acc, curr), 0);
   }
 
   //bribe
@@ -243,15 +243,24 @@ export default class Coraption extends Component {
   }
 
   P4(i) {
-    return this.conjunction(this.conjunction(this.K3(), this.F1()), this.E3(i));
+    return this.conjunction(
+      this.conjunction(this.K3(), this.F1(), this.B2()),
+      this.E2(i)
+    );
   }
 
   P5(i) {
-    return this.conjunction(this.conjunction(this.T3(), this.K1()), this.E1(i));
+    return this.conjunction(
+      this.conjunction(this.T3(), this.K1(), this.A3()),
+      this.E2(i)
+    );
   }
 
   P6(i) {
-    return this.conjunction(this.conjunction(this.F2(), this.T2()), this.E2(i));
+    return this.conjunction(
+      this.conjunction(this.F2(), this.T1(), this.A1()),
+      this.E1(i)
+    );
   }
   //   P7(i) {
   //     return this.conjunction(this.conjunction(this.T3(), this.A3()), this.E1(i));
