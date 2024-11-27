@@ -27,9 +27,7 @@ import React, { Component } from "react";
 // eslint-disable-next-line
 
 export default class Coraption extends Component {
-  constructor(
-    props
-  ) {
+  constructor(props) {
     super(props);
     this.state = {
       rang: 2,
@@ -39,7 +37,7 @@ export default class Coraption extends Component {
       companyCoraptionLevel: 5,
       faith: 2,
       result: 0,
-      resutArray: []
+      resutArray: [],
     };
 
     this.calculateCoraption = this.calculateCoraption.bind(this);
@@ -54,7 +52,7 @@ export default class Coraption extends Component {
   }
 
   conjunction(...args) {
-    return args.reduce((acc, curr) => Math.min(acc, curr), 0);
+    return args.reduce((acc, curr) => Math.min(acc, curr), 1);
   }
 
   //bribe
@@ -98,7 +96,9 @@ export default class Coraption extends Component {
   }
 
   B3() {
-    return this.state.rang >= 8 && this.state.rang <= 10 ? 1 : this.state.rang / 7 - 1 / 7;
+    return this.state.rang >= 8 && this.state.rang <= 10
+      ? 1
+      : this.state.rang / 7 - 1 / 7;
   }
   //salary
   C1() {
@@ -156,13 +156,17 @@ export default class Coraption extends Component {
   //faith lvl
 
   K1() {
-    return this.state.companyCoraptionLevel >= 1 && this.state.companyCoraptionLevel <= 2
+    return this.state.companyCoraptionLevel >= 1 &&
+      this.state.companyCoraptionLevel <= 2
       ? 1
       : -Math.pow(this.state.companyCoraptionLevel - 2, 2) / 64 + 1;
   }
 
   K2() {
-    if (this.state.companyCoraptionLevel >= 4 && this.state.companyCoraptionLevel <= 6) {
+    if (
+      this.state.companyCoraptionLevel >= 4 &&
+      this.state.companyCoraptionLevel <= 6
+    ) {
       return 1;
     } else if (
       this.state.companyCoraptionLevel >= 1 &&
@@ -175,7 +179,8 @@ export default class Coraption extends Component {
   }
 
   K3() {
-    return this.state.companyCoraptionLevel >= 8 && this.state.companyCoraptionLevel <= 10
+    return this.state.companyCoraptionLevel >= 8 &&
+      this.state.companyCoraptionLevel <= 10
       ? 1
       : -Math.pow(this.state.companyCoraptionLevel - 6, 2) / 49 + 1;
   }
@@ -231,11 +236,17 @@ export default class Coraption extends Component {
   }
 
   P2(i) {
-    return this.conjunction(this.conjunction(this.A3(), this.B1()), this.E3(i));
+    return this.conjunction(
+      this.conjunction(this.A3(), this.B1(), this.C1()),
+      this.E3(i)
+    );
   }
 
   P3(i) {
-    return this.conjunction(this.conjunction(this.A2(), this.C2()), this.E2(i));
+    return this.conjunction(
+      this.conjunction(this.A2(), this.C2(), this.K2()),
+      this.E2(i)
+    );
   }
 
   P4(i) {
@@ -278,17 +289,15 @@ export default class Coraption extends Component {
       const p5 = this.P5(i);
       const p6 = this.P6(i);
       //const p7 = this.P7(i);
-
+      //console.log("p1", p1);
       resultArray.push(this.disjunction(p1, p2, p3, p4, p5, p6));
     }
     const result = this.findFirstMaximum(resultArray);
 
-    console.log('state: ', this.state)
+    console.log("state: ", this.state);
     console.log(resultArray);
     console.log("\n\n", result);
-    this.setState({resultArray: resultArray});
-    this.setState({ result: result });
+    this.setState({ resultArray: resultArray });
+    this.setState({ result: result.toFixed(2) });
   }
 }
-
-
