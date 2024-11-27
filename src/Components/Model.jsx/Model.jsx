@@ -21,10 +21,10 @@ class Model extends ModelController {
   }
 
   handleRangeChange(event) {
-    const { value } = event.target;
+    const { name, value } = event.target;
 
     const clampedValue = Math.min(Math.max(Number(value), 1), 10);
-    this.setState({ rang: clampedValue });
+    this.setState({ [name]: clampedValue });
   }
 
   render() {
