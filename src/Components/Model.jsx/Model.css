@@ -1,20 +1,22 @@
+/*********** Base styles ***********/
 body {
     background-color: #e0efff; /* Світло-блакитний фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+/*********** Fuzzy Logic Content Styles ***********/
 .fuzzyLogicContent {
-    border: 5px solid #4a90e2; /* Теплий синій бордер */
     background-color: #ffffff;
+    border: 2px solid #4a90e2; /* Теплий синій бордер */
     border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 50px;
     position: absolute;
     top: 50%;
@@ -27,7 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
 .fuzzyLogic > h3 {
@@ -35,7 +37,23 @@ body {
     white-space: nowrap;
 }
 
-/*********** Baseline, reset styles ***********/
+.fuzzyLogic > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/*********** Button Styles ***********/
+button {
+    background-color: #e8f2ff;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+}
+
+/*********** Input Range Styles ***********/
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
@@ -49,23 +67,21 @@ input[type="range"]:focus {
     outline: none;
 }
 
-/******** Chrome, Safari, Opera and Edge Chromium styles ********/
-/* slider track */
+/* Chrome, Safari, Opera, and Edge */
 input[type="range"]::-webkit-slider-runnable-track {
     background-color: #aec6e6; /* Світло-синій фон для треку */
     border-radius: 1rem;
     height: 1rem;
 }
 
-/* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    margin-top: -4px;
     background-color: #005b96; /* Темно-синій для слайдера */
     border-radius: 1rem;
     height: 1.5rem;
     width: 1.5rem;
+    margin-top: -4px;
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
@@ -73,15 +89,13 @@ input[type="range"]:focus::-webkit-slider-thumb {
     outline-offset: 0.125rem;
 }
 
-/*********** Firefox styles ***********/
-/* slider track */
+/* Firefox */
 input[type="range"]::-moz-range-track {
     background-color: #aec6e6;
     border-radius: 1rem;
     height: 1rem;
 }
 
-/* slider thumb */
 input[type="range"]::-moz-range-thumb {
     background-color: #005b96;
     border: none;
@@ -100,9 +114,9 @@ input[type="number"] {
     -webkit-appearance: none;
     appearance: none;
     background: #e6f0ff; /* Світло-блакитний фон */
-    color: #2c3e50; /* Темно-сірий для тексту */
     border: 3px solid #3498db; /* Світло-синій бордер */
     border-radius: 0.5rem;
+    color: #2c3e50; /* Темно-сірий для тексту */
     font-family: 'Arial', sans-serif;
     font-size: 1.2rem;
     text-align: center;
@@ -110,27 +124,24 @@ input[type="number"] {
     height: 2.5rem;
     padding: 0.5rem;
     margin: 0.5rem;
-    box-shadow: 3px 3px 0 #b0c6d6; /* Легка тінь для об'єму */
+    box-shadow: 3px 3px 0 #b0c6d6; /* Легка тінь */
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-/* Hover effect */
 input[type="number"]:hover {
     border-color: #1c6fa0; /* Темно-синій */
     box-shadow: 3px 3px 0 #4a90e2;
 }
 
-/* Focus effect */
 input[type="number"]:focus {
     outline: none;
     box-shadow: 0 0 10px #3498db;
 }
 
-/* Disabled input */
 input[type="number"]:disabled {
     background: #dcdcdc;
-    color: #aaaaaa;
     border: 3px dashed #bbbbbb;
+    color: #aaaaaa;
     cursor: not-allowed;
 }
