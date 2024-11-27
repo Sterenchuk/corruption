@@ -28,13 +28,9 @@ import React, { Component } from "react";
 
 export default class Coraption extends Component {
   constructor(
-    rang,
-    salary,
-    bribeSize,
-    companyTransparencyLevel,
-    companyCoraptionLevel,
-    faith
+    props
   ) {
+    super(props);
     this.state = {
       rang: 2,
       salary: 4000,
@@ -46,7 +42,7 @@ export default class Coraption extends Component {
       resutArray: []
     };
 
-    this.calculateCoraption() = this.calculateCoraption.bind(this);
+    this.calculateCoraption = this.calculateCoraption.bind(this);
   }
 
   amplificate(...args) {
@@ -287,8 +283,9 @@ export default class Coraption extends Component {
     }
     const result = this.findFirstMaximum(resultArray);
 
-    //console.log(resultArray);
-    //console.log("\n\n", result);
+    console.log('state: ', this.state)
+    console.log(resultArray);
+    console.log("\n\n", result);
     this.setState({resultArray: resultArray});
     this.setState({ result: result });
   }
