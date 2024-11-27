@@ -1,0 +1,136 @@
+body {
+    background-color: #e0efff; /* Світло-блакитний фон */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fuzzyLogicContent {
+    border: 5px solid #4a90e2; /* Теплий синій бордер */
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fuzzyLogic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.fuzzyLogic > h3 {
+    margin-right: 50px;
+    white-space: nowrap;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #aec6e6; /* Світло-синій фон для треку */
+    border-radius: 1rem;
+    height: 1rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px;
+    background-color: #005b96; /* Темно-синій для слайдера */
+    border-radius: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #005b96;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #aec6e6;
+    border-radius: 1rem;
+    height: 1rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #005b96;
+    border: none;
+    border-radius: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #005b96;
+    outline-offset: 0.125rem;
+}
+
+/*********** Input Number Styles ***********/
+input[type="number"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e6f0ff; /* Світло-блакитний фон */
+    color: #2c3e50; /* Темно-сірий для тексту */
+    border: 3px solid #3498db; /* Світло-синій бордер */
+    border-radius: 0.5rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 10rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: 3px 3px 0 #b0c6d6; /* Легка тінь для об'єму */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+input[type="number"]:hover {
+    border-color: #1c6fa0; /* Темно-синій */
+    box-shadow: 3px 3px 0 #4a90e2;
+}
+
+/* Focus effect */
+input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #3498db;
+}
+
+/* Disabled input */
+input[type="number"]:disabled {
+    background: #dcdcdc;
+    color: #aaaaaa;
+    border: 3px dashed #bbbbbb;
+    cursor: not-allowed;
+}
