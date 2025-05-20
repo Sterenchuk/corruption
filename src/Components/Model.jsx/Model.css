@@ -1,147 +1,170 @@
-/*********** Base styles ***********/
 body {
-    background-color: #e0efff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  background-color: #e0efff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 
-/*********** Fuzzy Logic Content Styles ***********/
+/*********** Fuzzy Logic Content ***********/
 .fuzzyLogicContent {
-    background-color: #ffffff;
-    border: 2px solid #4a90e2;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.fuzzyLogicWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  height: 80%;
+  margin-top: 20px;
+}
+
+/*********** Input Section ***********/
+.fuzzyLogicInputs {
+  width: 45%;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+  border-radius: 15px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*********** Graph Section ***********/
+.fuzzyLogicGraph {
+  width: 45%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fuzzyLogicGraph canvas {
+  width: 100% !important;
+  height: 630px !important;
+}
+
+/*********** Common Elements ***********/
 .fuzzyLogic {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.fuzzyLogic > h3 {
-    margin-right: 50px;
-    white-space: nowrap;
+.fuzzyLogic h3 {
+  margin-right: 20px;
+  white-space: nowrap;
 }
 
 .fuzzyLogic > div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-/*********** Button Styles ***********/
+.fuzzyLogicResult {
+  margin-top: 20px;
+}
+
+/*********** Buttons ***********/
 button {
-    background-color: #e8f2ff;
-    border: 2px solid #4a90e2;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-weight: 600;
-    font-size: large;
-    cursor: pointer;
+  background-color: #e8f2ff;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: large;
+  cursor: pointer;
 }
 
-/*********** Input Range Styles ***********/
+/*********** Range Slider ***********/
 input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 15rem;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
 }
 
-/* Removes default focus */
 input[type="range"]:focus {
-    outline: none;
+  outline: none;
 }
 
-/* Chrome, Safari, Opera, and Edge */
 input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #aec6e6;
-    border-radius: 1rem;
-    height: 1rem;
+  background-color: #aec6e6;
+  border-radius: 1rem;
+  height: 1rem;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #005b96;
-    border-radius: 1rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-top: -4px;
+  -webkit-appearance: none;
+  background-color: #005b96;
+  border-radius: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid #005b96;
-    outline-offset: 0.125rem;
+  outline: 3px solid #005b96;
 }
 
-/* Firefox */
 input[type="range"]::-moz-range-track {
-    background-color: #aec6e6;
-    border-radius: 1rem;
-    height: 1rem;
+  background-color: #aec6e6;
+  border-radius: 1rem;
+  height: 1rem;
 }
 
 input[type="range"]::-moz-range-thumb {
-    background-color: #005b96;
-    border: none;
-    border-radius: 1rem;
-    height: 1.5rem;
-    width: 1.5rem;
+  background-color: #005b96;
+  border-radius: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 input[type="range"]:focus::-moz-range-thumb {
-    outline: 3px solid #005b96;
-    outline-offset: 0.125rem;
+  outline: 3px solid #005b96;
 }
 
-/*********** Input Number Styles ***********/
+/*********** Number Input ***********/
 input[type="number"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: #e6f0ff;
-    border: 3px solid #3498db;
-    border-radius: 0.5rem;
-    color: #2c3e50;
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 10rem;
-    height: 2.5rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    box-shadow: 3px 3px 0 #b0c6d6;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  background: #e6f0ff;
+  border: 3px solid #3498db;
+  border-radius: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 10rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  box-shadow: 3px 3px 0 #b0c6d6;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 input[type="number"]:hover {
-    border-color: #1c6fa0;
-    box-shadow: 3px 3px 0 #4a90e2;
+  border-color: #1c6fa0;
+  box-shadow: 3px 3px 0 #4a90e2;
 }
 
 input[type="number"]:focus {
-    outline: none;
-    box-shadow: 0 0 10px #3498db;
+  outline: none;
+  box-shadow: 0 0 10px #3498db;
 }
 
 input[type="number"]:disabled {
-    background: #dcdcdc;
-    border: 3px dashed #bbbbbb;
-    color: #aaaaaa;
-    cursor: not-allowed;
+  background: #dcdcdc;
+  border: 3px dashed #bbbbbb;
+  color: #aaaaaa;
+  cursor: not-allowed;
 }
